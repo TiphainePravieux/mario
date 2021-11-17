@@ -1,0 +1,15 @@
+---
+- hosts: prod
+  become: yes
+  vars: 
+    system_user: vagranti
+  vars_files: 
+    - files/secrets/credentials.yml
+  roles:
+    - role: '/home/vagrant/mario/roles/docker/tasks/main.yml'
+    - role: '/home/vagrant/mario/roles/mario/tasks/main.yml'
+
+#  vars:
+#     system_user: vagrant
+#  vars_files:
+#     - files/secrets/credentials.yml
